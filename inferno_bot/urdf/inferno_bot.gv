@@ -1,0 +1,32 @@
+digraph G {
+node [shape=box];
+"base_footprint" [label="base_footprint"];
+"base_link" [label="base_link"];
+"camera" [label="camera"];
+"gps" [label="gps"];
+"imu" [label="imu"];
+"lbr" [label="lbr"];
+"lfr" [label="lfr"];
+"lidar" [label="lidar"];
+"rbr" [label="rbr"];
+"rfr" [label="rfr"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_footprint" -> "base_link_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"base_link_joint" -> "base_link"
+"base_link" -> "jcamera" [label="xyz: 0.063095 -0.27428 0.41921 \nrpy: 1.5708 -0.037694 3.47191e-18"]
+"jcamera" -> "camera"
+"base_link" -> "jgps" [label="xyz: 0.23802 -0.073252 0.22476 \nrpy: 0 1.5708 -1.5708"]
+"jgps" -> "gps"
+"base_link" -> "jimu" [label="xyz: 0.21874 -0.14723 0.28544 \nrpy: 1.5708 -0 0"]
+"jimu" -> "imu"
+"base_link" -> "jlbr" [label="xyz: 0.23802 -0.086396 0.05214 \nrpy: -1.5708 -1.3758 -1.5708"]
+"jlbr" -> "lbr"
+"base_link" -> "jlfr" [label="xyz: 0.23802 -0.2784 0.05214 \nrpy: 1.5708 0.3156 1.5708"]
+"jlfr" -> "lfr"
+"base_link" -> "jlidar" [label="xyz: 0.10599 -0.16721 0.29424 \nrpy: 3.14159 0.00159265 1.57159"]
+"jlidar" -> "lidar"
+"base_link" -> "jrbr" [label="xyz: -0.061976 -0.086396 0.05214 \nrpy: -1.5708 1.3758 1.5708"]
+"jrbr" -> "rbr"
+"base_link" -> "jrfr" [label="xyz: -0.061976 -0.2784 0.05214 \nrpy: 1.5708 -0.3156 -1.5708"]
+"jrfr" -> "rfr"
+}

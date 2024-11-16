@@ -1,0 +1,28 @@
+<launch>
+  <include file="$(find inferno_bot)/launch/gazebo.launch"/>
+  <include file="$(find inferno_bot)/launch/display.launch"/>
+  <include file="$(find inferno_bot)/launch/kinect.launch"/>
+  <include file="$(find inferno_bot)/launch/mine.launch"/>
+  <arg name="map_topic" default="map_provider" />
+  <arg name="use_map_topic" default="true" />
+
+    <!-- Add move_base parameters -->
+  <rosparam file="$(find inferno_bot)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
+  <rosparam file="$(find inferno_bot)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+  <rosparam file="$(find inferno_bot)/config/local_costmap_params.yaml" command="load" />
+  <rosparam file="$(find inferno_bot)/config/global_costmap_params.yaml" command="load" />
+  <rosparam file="$(find inferno_bot)/config/base_local_planner_params.yaml" command="load" />
+  <rosparam file="$(find inferno_bot)/config/move_base_params.yaml" command="load" />
+
+  <param name="base_global_planner" type="string" value="navfn/NavfnROS" />
+  <param name="controller_frequency" type="double" value="6.0" />
+
+  <remap from="odom" to="odometry/filtered" />
+
+    <!-- Include move_base -->
+  <include file="$(find inferno_bot)/launch/include/move_base.launch">
+     <arg name="map_topic" value="$(arg map_topic)" />
+     <arg name="use_map_topic" value="$(arg use_map_topic)" /-->
+  </include>
+</launch>
+

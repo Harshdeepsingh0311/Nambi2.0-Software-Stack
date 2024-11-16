@@ -1,0 +1,17 @@
+
+<launch>
+    <arg name="compressed" default="1"/>
+    <node name="image_pub" pkg="motion_plan" type="image_pub.py" unless="$(arg compressed)"/>
+    <node name="image_pub2" pkg="motion_plan" type="image_pub.py" unless="$(arg compressed)">
+        <rosparam param="camera_name">usb-Sonix_Technology_Co.__Ltd._USB_2.0_Camera_SN0001-video-index0</rosparam>
+        <rosparam param="camera_id">2</rosparam>
+    </node>
+    <node name="image_pub" pkg="motion_plan" type="compressed_image_pub.py" if="$(arg compressed)">
+        <rosparam param="camera_name">usb-046d_C270_HD_WEBCAM_EA2B8C60-video-index0</rosparam>
+        <rosparam param="camera_id">1</rosparam>
+    </node>
+    <node name="image_pub2" pkg="motion_plan" type="compressed_image_pub.py" if="$(arg compressed)">
+        <rosparam param="camera_name">usb-Sonix_Technology_Co.__Ltd._USB_2.0_Camera_SN0001-video-index0</rosparam>
+        <rosparam param="camera_id">2</rosparam>
+    </node>
+</launch>

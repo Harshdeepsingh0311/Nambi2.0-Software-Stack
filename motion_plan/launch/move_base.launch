@@ -1,0 +1,50 @@
+<launch>
+  <!-- Arguments 
+  <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>-->
+  <arg name="cmd_vel_topic" default="/cmd_vel" />
+  <arg name="odom_topic" default="odom" />
+  <arg name="map_topic" default="/map" />
+  <arg name="scan_topic_filtered" default="/scan_filtered" />
+  <arg name="base_frame"  default="root_link"/>
+  <arg name="global_frame"  default="map"/>
+  <arg name="odom_frame"  default="odom"/>
+  <arg name="move_forward_only" default="false"/>
+  <arg name="simulation" default="false"/>
+  
+  <include file="$(find motion_plan)/launch/velocity_smoother.launch" />
+
+ <!-- Throttle the voxel grid that is being published for rviz -->
+  <node ns="move_base_node/local_costmap" name="voxel_grid_throttle" pkg="topic_tools" 
+      type="throttle" args="messages voxel_grid 3.0 voxel_grid_throttled" />
+
+
+  <!-- move_base -->
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" />
+    <rosparam file="$(find motion_plan)/param/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find motion_plan)/param/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find motion_plan)/param/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find motion_plan)/param/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find motion_plan)/param/move_base_params.yaml" command="load" />
+    <rosparam file="$(find motion_plan)/param/dwa_local_planner_params.yaml" command="load" />
+    <rosparam file="$(find motion_plan)/param/global_planner_params.yaml" command="load" />
+    <rosparam file="$(find motion_plan)/param/navfn_global_planner_params.yaml" command="load" />
+
+    <param name="global_costmap/global_frame" value="$(arg global_frame)" />
+    <param name="global_costmap/robot_base_frame" value="$(arg base_frame)" />
+    <param name="local_costmap/global_frame" value="$(arg odom_frame)" />
+    <param name="local_costmap/robot_base_frame" value="$(arg base_frame)" />
+    <param name="DWAPlannerROS/global_frame_id" value="$(arg odom_frame)" />
+
+    <remap from="cmd_vel" to="$(arg cmd_vel_topic)"/>
+    <remap from="odom" to="$(arg odom_topic)"/>
+    <remap from="scan" to="$(arg scan_topic_filtered)"/>
+    <remap from="map" to="$(arg map_topic)"/>
+    <param name="DWAPlannerROS/min_vel_x" value="0.0" if="$(arg move_forward_only)" />
+  </node>
+
+  <node name="vel_filter_sim" pkg="motion_plan" type="vel_filter_sim.py" if="$(arg simulation)"/>
+  <node name="vel_filter" pkg="motion_plan" type="vel_filter.py" unless="$(arg simulation)"/>
+
+
+</launch>

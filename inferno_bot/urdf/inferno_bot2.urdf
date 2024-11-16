@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="inferno_bot">
+  <link name="base_footprint">
+   <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="base_link_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="base_footprint"/>
+    <child link="base_link" />
+  </joint>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0 -0.2 -0.5"
+        rpy="1.57079632679 0  1.57" />
+      <mass
+        value="19.328" />
+      <inertia
+        ixx="0.32648"
+        ixy="-0.0072637"
+        ixz="-0.0050166"
+        iyy="0.34393"
+        iyz="0.011875"
+        izz="0.33497" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://inferno_bot/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://inferno_bot/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="lfr">
+    <inertial>
+      <origin
+        xyz="0 0 0.0188774346977751"
+        rpy="0 0 0" />
+      <mass
+        value="1.22379010652644" />
+      <inertia
+        ixx="0.00173774383873314"
+        ixy="0"
+        ixz="3.9001672522167E-19"
+        iyy="0.00173774383873314"
+        iyz="-2.33672244037105E-19"
+        izz="0.0031034231481217" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://inferno_bot/meshes/lfr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://inferno_bot/meshes/lfr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jlfr"
+    type="continuous">
+    <origin
+      xyz="0.23802 -0.2784 0.05214"
+      rpy="1.5708 0.3156 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="lfr" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="rfr">
+    <inertial>
+      <origin
+        xyz="0 -3.46944695195361E-17 0.0188774346977752"
+        rpy="0 0 0" />
+      <mass
+        value="1.22379010652644" />
+      <inertia
+        ixx="0.00173774383873314"
+        ixy="5.42101086242752E-20"
+        ixz="-3.11227358142309E-19"
+        iyy="0.00173774383873314"
+        iyz="-2.49624938129976E-19"
+        izz="0.0031034231481217" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://inferno_bot/meshes/rfr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://inferno_bot/meshes/rfr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jrfr"
+    type="continuous">
+    <origin
+      xyz="-0.061976 -0.2784 0.05214"
+      rpy="1.5708 -0.3156 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="rfr" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="rbr">
+    <inertial>
+      <origin
+        xyz="0 1.38777878078145E-17 0.0188774346977751"
+        rpy="0 0 0" />
+      <mass
+        value="1.22379010652644" />
+      <inertia
+        ixx="0.00173774383873314"
+        ixy="-8.13151629364128E-20"
+        ixz="2.91114401643301E-20"
+        iyy="0.00173774383873314"
+        iyz="5.66832753405986E-21"
+        izz="0.0031034231481217" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://inferno_bot/meshes/rbr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://inferno_bot/meshes/rbr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jrbr"
+    type="continuous">
+    <origin
+      xyz="-0.061976 -0.086396 0.05214"
+      rpy="-1.5708 1.3758 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="rbr" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="lbr">
+    <inertial>
+      <origin
+        xyz="-1.38777878078145E-17 0 0.0188774346977751"
+        rpy="0 0 0" />
+      <mass
+        value="1.22379010652645" />
+      <inertia
+        ixx="0.00173774383873314"
+        ixy="2.71050543121376E-20"
+        ixz="6.63506635774469E-20"
+        iyy="0.00173774383873314"
+        iyz="-5.2484015150472E-21"
+        izz="0.0031034231481217" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://inferno_bot/meshes/lbr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://inferno_bot/meshes/lbr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jlbr"
+    type="continuous">
+    <origin
+      xyz="0.23802 -0.086396 0.05214"
+      rpy="-1.5708 -1.3758 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="lbr" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="lidar">
+    <inertial>
+      <origin
+        xyz="-0.00748346988333637 -0.0106681277328403 -9.19261110875341E-05"
+        rpy="0 0 0" />
+      <mass
+        value="1.33076913637071" />
+      <inertia
+        ixx="0.000614917940454091"
+        ixy="-0.00015824302591117"
+        ixz="-8.01984318974931E-07"
+        iyy="0.00109815200027136"
+        iyz="3.09162986587583E-06"
+        izz="0.000960697335617223" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://inferno_bot/meshes/lidar.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://inferno_bot/meshes/lidar.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jlidar"
+    type="fixed">
+    <origin
+      xyz="0.10599 -0.16721 0.29424"
+      rpy="0 3.14 -1.57" />
+    <parent
+      link="base_link" />
+    <child
+      link="lidar" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="camera">
+    <inertial>
+      <origin
+        xyz="0.00487804878048782 -5.55111512312578E-17 0.01"
+        rpy="0 0 0" />
+      <mass
+        value="0.108324899183498" />
+      <inertia
+        ixx="1.78447644899076E-05"
+        ixy="4.95514274143766E-20"
+        ixz="1.39929372506814E-21"
+        iyy="0.00016353799212103"
+        iyz="3.18840810659321E-22"
+        izz="0.000174161096665371" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://inferno_bot/meshes/camera.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://inferno_bot/meshes/camera.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jcamera"
+    type="fixed">
+    <origin
+      xyz="0.063095 -0.27428 0.41921"
+      rpy="1.5708 -0.037694 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="camera" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="gps">
+    <inertial>
+      <origin
+        xyz="0.00831765719568933 0.00220465717156251 0.00800760937383431"
+        rpy="0 0 0" />
+      <mass
+        value="0.00102542780831628" />
+      <inertia
+        ixx="2.1086651163549E-08"
+        ixy="-1.9350067087283E-10"
+        ixz="-9.56953752544396E-13"
+        iyy="3.89948879074694E-08"
+        iyz="-7.95683863873784E-12"
+        izz="2.14311650217245E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://inferno_bot/meshes/gps.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.72156862745098 0.525490196078431 0.0431372549019608 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://inferno_bot/meshes/gps.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jgps"
+    type="fixed">
+    <origin
+      xyz="0.23802 -0.073252 0.22476"
+      rpy="1.5708 1.5708 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="gps" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="imu">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://inferno_bot/meshes/imu.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://inferno_bot/meshes/imu.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jimu"
+    type="fixed">
+    <origin
+      xyz="0.21874 -0.14723 0.28544"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="imu" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+    <gazebo reference="lidar">
+    <sensor type="ray" name="head_hokuyo_sensor">
+      <pose> 0 0 0 0 0 0 </pose>
+      <visualize>true</visualize>
+      <update_rate>40</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>720</samples>
+            <resolution>1</resolution>
+            <min_angle>-1.57</min_angle>
+            <max_angle>1.57</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>30.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise parameters based on published spec for Hokuyo laser
+               achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and
+               stddev of 0.01m will put 99.7% of samples within 0.03m of the true
+               reading. -->
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
+        <topicName>/rrbot/laser/scan</topicName>
+        <frameName>lidar</frameName> 
+      </plugin>
+    </sensor>
+  </gazebo>
+  <gazebo reference="imu">
+    <gravity>true</gravity>
+    <sensor name="imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <topic>__default_topic__</topic>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>imu</topicName>
+        <bodyName>imu</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0 0 0</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>base_link</frameName>
+        <initialOrientationAsReference>false</initialOrientationAsReference>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+  <gazebo reference="camera">
+      <sensor type="camera" name="camera_camera_sensor">
+        <update_rate>30.0</update_rate>
+        <camera>
+          <pose>0.035 0 0.078 0 ${-M_PI/2} 0</pose>
+          <image>
+            <format>R8G8B8</format>
+            <width>1020</width>
+            <height>1020</height>
+          </image>
+          <clip>
+            <near>0.01</near>
+            <far>100</far>
+          </clip>
+        </camera>
+
+        <plugin name="camera_camera_controller" filename="libgazebo_ros_camera.so">
+          <alwaysOn>true</alwaysOn>
+          <updateRate>0.0</updateRate>
+          <cameraName>arm_sensor/camera</cameraName>
+          <imageTopicName>image_raw</imageTopicName>
+          <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+          <frameName>base_link</frameName>
+          <hackBaseline>0.07</hackBaseline>
+          <distortionK1>0.0</distortionK1>
+          <distortionK2>0.0</distortionK2>
+          <distortionK3>0.0</distortionK3>
+          <distortionT1>0.0</distortionT1>
+          <distortionT2>0.0</distortionT2>
+        </plugin>
+      </sensor>
+    </gazebo>
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+</robot>

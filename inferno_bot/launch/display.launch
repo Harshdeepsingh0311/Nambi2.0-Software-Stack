@@ -1,0 +1,28 @@
+<launch>
+  <arg
+    name="model" />
+  <include file="$(find inferno_bot)/launch/control.launch" />
+  <arg
+    name="gui"
+    default="False" />
+  <param
+    name="robot_description"
+    textfile="$(find inferno_bot)/urdf/inferno_bot.urdf" />
+  <param
+    name="use_gui"
+    value="$(arg gui)" />
+  <node
+    name="joint_state_publisher_gui"
+    pkg="joint_state_publisher_gui"
+    type="joint_state_publisher_gui" />
+  <node
+    name="robot_state_publisher"
+    pkg="robot_state_publisher"
+    type="robot_state_publisher" />
+
+  <node
+    name="rviz"
+    pkg="rviz"
+    type="rviz"
+    args="-d $(find inferno_bot)/urdf.rviz" />
+</launch>

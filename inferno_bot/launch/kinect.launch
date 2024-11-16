@@ -1,0 +1,25 @@
+<launch>
+    <!-- Launch kinect2_bridge -->
+    <include file="$(find kinect2_bridge)/launch/kinect2_bridge.launch">
+        <arg name="publish_tf" value="true"/>
+    </include>
+
+    <!-- Static transform publisher -->
+    <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher" args="0 0 0 -1.5707963267948966 0 -1.5707963267948966 camera_link kinect2_link 100"/>
+
+    <!-- Launch rtabmap -->
+    <include file="$(find rtabmap_launch)/launch/rtabmap.launch">
+        <arg name="rtabmap_args" value="--delete_db_on_start"/>
+        <arg name="rgb_topic" value="/kinect2/qhd/image_color_rect"/>
+        <arg name="depth_topic" value="/kinect2/qhd/image_depth_rect"/>
+        <arg name="camera_info_topic" value="/kinect2/qhd/camera_info"/>
+        <arg name="approx_sync" value="false"/>
+        <arg name="rtabmap_viz" value="false"/>
+    </include>
+    
+    <!--node 
+    	name="map_republisher" pkg="rosbridge_server" type="rosbridge_websocket" args="">
+    	<param name="topics" value="rtabmap/grid_map@OccupancyGrid@map_provider" />
+    </node-->
+</launch>
+

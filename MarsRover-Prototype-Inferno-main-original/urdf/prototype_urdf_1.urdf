@@ -1,0 +1,838 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="prototype_urdf_1">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0219770098143648 8.32667268468867E-17 0.0800993240605113"
+        rpy="0 0 0" />
+      <mass
+        value="8.27204354876919" />
+      <inertia
+        ixx="0.125515497732404"
+        ixy="3.20384399545867E-17"
+        ixz="0.00591678240999964"
+        iyy="0.0947446888768331"
+        iyz="-4.88376335798078E-17"
+        izz="0.167383208265311" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prototype_urdf_1/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prototype_urdf_1/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link_1">
+    <inertial>
+      <origin
+        xyz="0.000410532165989727 -0.00149999999999999 0.025"
+        rpy="0 0 0" />
+      <mass
+        value="0.0130385672244284" />
+      <inertia
+        ixx="2.78228472702638E-06"
+        ixy="3.33561058761626E-22"
+        ixz="-2.11656430223428E-20"
+        iyy="1.15393239459097E-05"
+        iyz="-4.41638096934521E-23"
+        izz="8.77659706971996E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prototype_urdf_1/meshes/link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prototype_urdf_1/meshes/link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="sheet_1"
+    type="fixed">
+    <origin
+      xyz="0.108 -0.15 0.0137499999999999"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link_2">
+    <inertial>
+      <origin
+        xyz="-2.94120561239453E-10 -0.0575609490998044 -6.54688719903262E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.121564175776973" />
+      <inertia
+        ixx="0.000160951816476772"
+        ixy="-2.17884671615223E-12"
+        ixz="3.69036444117799E-13"
+        iyy="1.92605083566724E-05"
+        iyz="-4.84993735160634E-12"
+        izz="0.000160951817132427" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prototype_urdf_1/meshes/link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prototype_urdf_1/meshes/link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motor_1"
+    type="fixed">
+    <origin
+      xyz="0 0.1235 0.025"
+      rpy="0 0 0" />
+    <parent
+      link="link_1" />
+    <child
+      link="link_2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link_3">
+    <inertial>
+      <origin
+        xyz="9.36543456633854E-07 -0.0481345668474903 -1.55577345076208E-06"
+        rpy="0 0 0" />
+      <mass
+        value="1.07049545043938" />
+      <inertia
+        ixx="0.00238983060358801"
+        ixy="1.74698895129824E-09"
+        ixz="2.27701167019717E-09"
+        iyy="0.0034914577812288"
+        iyz="1.07402075709278E-09"
+        izz="0.00238984011148597" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prototype_urdf_1/meshes/link_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prototype_urdf_1/meshes/link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_1"
+    type="continuous">
+    <origin
+      xyz="0 -0.1265 0"
+      rpy="0 0 0" />
+    <parent
+      link="link_2" />
+    <child
+      link="link_3" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="link_4">
+    <inertial>
+      <origin
+        xyz="0.000410532165989741 -0.00149999999999999 0.025"
+        rpy="0 0 0" />
+      <mass
+        value="0.0130385672244284" />
+      <inertia
+        ixx="2.78228472702638E-06"
+        ixy="3.83324340001724E-22"
+        ixz="-2.10222273606322E-20"
+        iyy="1.15393239459097E-05"
+        iyz="-2.31394473058969E-23"
+        izz="8.77659706971996E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prototype_urdf_1/meshes/link_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prototype_urdf_1/meshes/link_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="sheet_2"
+    type="fixed">
+    <origin
+      xyz="-0.0980000000000009 -0.15 0.013749999999999"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_4" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link_5">
+    <inertial>
+      <origin
+        xyz="1.17656606679617E-10 -0.0575609490998044 -7.08012037886618E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.121564175776973" />
+      <inertia
+        ixx="0.000160951816337512"
+        ixy="8.71601344320362E-13"
+        ixz="-1.59649041192256E-13"
+        iyy="1.92605083566724E-05"
+        iyz="-5.24495722249928E-12"
+        izz="0.000160951817271687" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prototype_urdf_1/meshes/link_5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prototype_urdf_1/meshes/link_5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motor_2"
+    type="fixed">
+    <origin
+      xyz="0 0.1235 0.025000000000001"
+      rpy="0 0 0" />
+    <parent
+      link="link_4" />
+    <child
+      link="link_5" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link_6">
+    <inertial>
+      <origin
+        xyz="1.50373167695506E-06 -0.0481345668474902 1.01800575633137E-06"
+        rpy="0 0 0" />
+      <mass
+        value="1.07049545043938" />
+      <inertia
+        ixx="0.00238984032655738"
+        ixy="-1.16546365058006E-09"
+        ixz="-1.75887731071069E-09"
+        iyy="0.0034914577812288"
+        iyz="1.68736050110502E-09"
+        izz="0.0023898303885166" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prototype_urdf_1/meshes/link_6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prototype_urdf_1/meshes/link_6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_2"
+    type="continuous">
+    <origin
+      xyz="0 -0.1265 0"
+      rpy="0 0 0" />
+    <parent
+      link="link_5" />
+    <child
+      link="link_6" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="link_7">
+    <inertial>
+      <origin
+        xyz="-0.000410532165989796 0.0015 0.025"
+        rpy="0 0 0" />
+      <mass
+        value="0.0130385672244284" />
+      <inertia
+        ixx="2.78228472702638E-06"
+        ixy="2.12768789927495E-21"
+        ixz="6.72733848672921E-21"
+        iyy="1.15393239459097E-05"
+        iyz="-3.83914791073412E-23"
+        izz="8.77659706971996E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prototype_urdf_1/meshes/link_7.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prototype_urdf_1/meshes/link_7.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="sheet_3"
+    type="fixed">
+    <origin
+      xyz="-0.098 0.15 0.0137499999999999"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_7" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link_8">
+    <inertial>
+      <origin
+        xyz="7.15954073804426E-10 0.0575609490998044 -5.03382335814706E-11"
+        rpy="0 0 0" />
+      <mass
+        value="0.121564175776973" />
+      <inertia
+        ixx="0.000160951817293361"
+        ixy="-5.30379172082046E-12"
+        ixz="-6.90704494046265E-14"
+        iyy="1.92605083566724E-05"
+        iyz="3.72905995268319E-13"
+        izz="0.000160951816315838" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prototype_urdf_1/meshes/link_8.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prototype_urdf_1/meshes/link_8.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motor_3"
+    type="fixed">
+    <origin
+      xyz="0 -0.1235 0.025"
+      rpy="0 0 0" />
+    <parent
+      link="link_7" />
+    <child
+      link="link_8" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link_9">
+    <inertial>
+      <origin
+        xyz="1.60379062252858E-07 0.0481345668474903 1.80881818692691E-06"
+        rpy="0 0 0" />
+      <mass
+        value="1.07049545043938" />
+      <inertia
+        ixx="0.00238983422146291"
+        ixy="-2.04093386449876E-09"
+        ixz="-5.14724671291243E-09"
+        iyy="0.0034914577812288"
+        iyz="2.00199760545316E-10"
+        izz="0.00238983649361107" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prototype_urdf_1/meshes/link_9.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prototype_urdf_1/meshes/link_9.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_3"
+    type="continuous">
+    <origin
+      xyz="0 0.1265 0"
+      rpy="0 0 0" />
+    <parent
+      link="link_8" />
+    <child
+      link="link_9" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="link_10">
+    <inertial>
+      <origin
+        xyz="-0.000410532165989796 0.00150000000000006 0.025"
+        rpy="0 0 0" />
+      <mass
+        value="0.0130385672244285" />
+      <inertia
+        ixx="2.78228472702638E-06"
+        ixy="1.51300110609778E-21"
+        ixz="2.03377339474844E-21"
+        iyy="1.15393239459097E-05"
+        iyz="-3.73279979253138E-23"
+        izz="8.77659706971997E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prototype_urdf_1/meshes/link_10.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prototype_urdf_1/meshes/link_10.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="sheet_4"
+    type="fixed">
+    <origin
+      xyz="0.108 0.15 0.01375"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_10" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link_11">
+    <inertial>
+      <origin
+        xyz="-3.16456638671525E-10 0.0575609490998044 6.44188868914597E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.121564175776973" />
+      <inertia
+        ixx="0.000160951816502909"
+        ixy="2.3443126558985E-12"
+        ixz="-3.90693812041674E-13"
+        iyy="1.92605083566724E-05"
+        iyz="-4.77215499033683E-12"
+        izz="0.00016095181710629" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prototype_urdf_1/meshes/link_11.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prototype_urdf_1/meshes/link_11.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="motor_4"
+    type="fixed">
+    <origin
+      xyz="0 -0.1235 0.0249999999999999"
+      rpy="0 0 0" />
+    <parent
+      link="link_10" />
+    <child
+      link="link_11" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link_12">
+    <inertial>
+      <origin
+        xyz="1.72060994690915E-06 0.0481345668474903 -5.80556703766444E-07"
+        rpy="0 0 0" />
+      <mass
+        value="1.07049545043938" />
+      <inertia
+        ixx="0.00238983871768519"
+        ixy="6.73758731171134E-10"
+        ixz="4.06130731405038E-09"
+        iyy="0.0034914577812288"
+        iyz="1.93688929873433E-09"
+        izz="0.00238983199738879" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prototype_urdf_1/meshes/link_12.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://prototype_urdf_1/meshes/link_12.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_4"
+    type="continuous">
+    <origin
+      xyz="0 0.1265 0"
+      rpy="0 0 0" />
+    <parent
+      link="link_11" />
+    <child
+      link="link_12" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+    <link name="lidar">
+    <visual>
+      <origin xyz="0 0 0.003"/>
+      <geometry>
+        <box size="0.079 0.05 0.006"/>
+      </geometry>
+      <material name="support">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="0 0 0.041"/>
+      <geometry>
+        <box size="0.05 0.05 0.07"/>
+      </geometry>
+      <material name="lidar">
+        <color rgba="1.0 0.0 0.0 0.7"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.003"/>
+      <geometry>
+        <box size="0.079 0.05 0.006"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 0 0.041"/>
+      <geometry>
+        <box size="0.05 0.05 0.07"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="hokuyo_joint" type="fixed">
+    <origin xyz="0.0775 0 0.20"/>
+    <parent link="base_link"/>
+    <child link="lidar"/>
+  </joint>
+
+  <!--link name="laser_frame"/>
+
+  <joint name="laser_joint" type="fixed">
+    <origin xyz="0 0 0.064"/>
+    <parent link="hokuyo_link"/>
+    <child link="laser_frame"/>
+  </joint-->
+  <gazebo reference="lidar">
+    <gravity>true</gravity>
+    <sensor name="imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <topic>__default_topic__</topic>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>imu</topicName>
+        <bodyName>imu</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0 0 0</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>base_link</frameName>
+        <initialOrientationAsReference>false</initialOrientationAsReference>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+  <gazebo reference="lidar">
+      <sensor type="camera" name="camera_camera_sensor">
+        <update_rate>30.0</update_rate>
+        <camera>
+          <pose>0.035 0 0.078 0 ${-M_PI/2} 0</pose>
+          <image>
+            <format>R8G8B8</format>
+            <width>1020</width>
+            <height>1020</height>
+          </image>
+          <clip>
+            <near>0.01</near>
+            <far>100</far>
+          </clip>
+        </camera>
+
+        <plugin name="camera_camera_controller" filename="libgazebo_ros_camera.so">
+          <alwaysOn>true</alwaysOn>
+          <updateRate>0.0</updateRate>
+          <cameraName>arm_sensor/camera</cameraName>
+          <imageTopicName>image_raw</imageTopicName>
+          <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+          <frameName>base_link</frameName>
+          <hackBaseline>0.07</hackBaseline>
+          <distortionK1>0.0</distortionK1>
+          <distortionK2>0.0</distortionK2>
+          <distortionK3>0.0</distortionK3>
+          <distortionT1>0.0</distortionT1>
+          <distortionT2>0.0</distortionT2>
+        </plugin>
+      </sensor>
+    </gazebo>
+<gazebo>
+  <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+    <updateRate>100.0</updateRate>
+    <robotNamespace>/</robotNamespace>
+    <leftFrontJoint>wheel_4</leftFrontJoint>
+    <rightFrontJoint>wheel_1</rightFrontJoint>
+    <leftRearJoint>wheel_3</leftRearJoint>
+    <rightRearJoint>wheel_2</rightRearJoint>
+    <wheelSeparation>0.3645</wheelSeparation>
+    <wheelDiameter>0.1316</wheelDiameter>
+    <robotBaseFrame>base_link</robotBaseFrame>
+    <torque>20</torque>
+    <topicName>cmd_vel</topicName>
+    <publishOdom>true</publishOdom>
+    <!-- Topic to publish nav_msgs/Odometry messages, defaults to `odom` -->
+    <odometryTopic>odom</odometryTopic>
+    <!-- Odometry frame, defaults to `odom` -->
+    <odometryFrame>odom</odometryFrame>
+    <broadcastTF>true</broadcastTF>
+    
+  </plugin>
+</gazebo>
+  <gazebo reference="lidar">
+    <sensor type="ray" name="head_hokuyo_sensor">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>true</visualize>
+      <update_rate>40</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>720</samples>
+            <resolution>1</resolution>
+            <min_angle>-3.14</min_angle>
+            <max_angle>3.14</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>30.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise parameters based on published spec for Hokuyo laser
+               achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and
+               stddev of 0.01m will put 99.7% of samples within 0.03m of the true
+               reading. -->
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
+        <topicName>/rrbot/laser/scan</topicName>
+        <frameName>lidar</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+</robot>

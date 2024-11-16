@@ -1,0 +1,30 @@
+<launch>
+  <arg
+    name="model" />
+<node
+    name="tf_footprint_base"
+    pkg="tf"
+    type="static_transform_publisher"
+    args="0 0 0 0 0 0 base_link base_footprint 40" />
+  <param
+    name="robot_description"
+    textfile="$(find prototype_urdf_1)/urdf/prototype_urdf_1.urdf" />
+  <node
+    name="joint_state_publisher_gui"
+    pkg="joint_state_publisher_gui"
+    type="joint_state_publisher_gui" />
+  <node
+    name="robot_state_publisher"
+    pkg="robot_state_publisher"
+    type="robot_state_publisher" />
+
+  <include file="$(find rplidar_ros)/launch/rplidar.launch" />
+	    
+
+  <node pkg="tf" type="static_transform_publisher" name="laser_broadcaster" args="0 0 0 3.14 0 0 base_link laser 100" />
+  <node
+    name="rviz"
+    pkg="rviz"
+    type="rviz"
+    args="-d $(find prototype_urdf_1)/rviz.rviz" />
+</launch>

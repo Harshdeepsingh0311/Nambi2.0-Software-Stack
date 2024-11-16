@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="kinect_v2">
+
+  <!-- Define the Kinect link -->
+  <xacro:property name="kinect_width" value="0.1" />
+  <xacro:property name="kinect_height" value="0.2" />
+  <xacro:property name="kinect_depth" value="0.1" />
+
+  <link name="kinect_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="${kinect_width} ${kinect_height} ${kinect_depth}" />
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="${kinect_width} ${kinect_height} ${kinect_depth}" />
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Define the joint to attach the Kinect to the robot -->
+  <joint name="kinect_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="kinect_link" />
+  </joint>
+
+  <!-- Gazebo-specific properties -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <!-- Add any necessary plugin configuration here -->
+    </plugin>
+    <!-- Define Gazebo-specific properties for visual and physical aspects -->
+    <link name="kinect_link">
+      <visual name="visual">
+        <geometry>
+          <box size="${kinect_width} ${kinect_height} ${kinect_depth}" />
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Blue</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <box size="${kinect_width} ${kinect_height} ${kinect_depth}" />
+        </geometry>
+      </collision>
+      <gravity>false</gravity>
+    </link>
+  </gazebo>
+
+</robot>
+

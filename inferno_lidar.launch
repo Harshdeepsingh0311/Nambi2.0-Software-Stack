@@ -1,0 +1,41 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+bool isPrime(int n)
+{
+	if(n==1){
+		return false;
+	}
+
+	else if(n==2){
+		return true;
+	}
+	
+	else if(n>2){
+		for(int i=2;i<n;i=i+1){
+			if (n%i==0){
+				return false;
+				break;
+			}
+
+			else{
+				return true;
+			}
+
+			
+		}
+		
+		
+	
+	}
+}
+
+
+
+int main() {
+    // Write C++ code here
+    isPrime(5);
+
+    return 0;
+}

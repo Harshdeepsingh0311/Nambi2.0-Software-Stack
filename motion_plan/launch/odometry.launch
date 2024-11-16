@@ -1,0 +1,48 @@
+<launch>
+  <arg name="three_d" default="true"/>
+
+  <!-- <node name="message_filter" 
+        pkg="leo_navigation" 
+        type="message_filter">
+    <rosparam command="load" 
+              file="$(find leo_navigation)/config/message_filter.yaml"/>
+  </node> -->
+
+  <node if="$(arg three_d)"
+        name="imu_filter_node" 
+        pkg="imu_filter_madgwick" 
+        type="imu_filter_node">
+    <rosparam command="load"
+              file="$(find motion_plan)/config/imu_filter_node.yaml"/>
+              <!-- <remap from="/imu/data_raw" to="/zed2/imu/data" /> -->
+              <!-- <remap from="/imu/data" to="/zed2/imu/data_filtered" /> -->
+  </node>
+
+  <node name="ekf_localization_node"
+        pkg="robot_localization"
+        type="ekf_localization_node"
+        clear_params="true">
+    <rosparam unless="$(arg three_d)"
+              command="load"
+              file="$(find motion_plan)/config/ekf_localization_node/ekf_2d.yaml"/>
+    <rosparam if="$(arg three_d)"
+              command="load"
+              file="$(find motion_plan)/config/ekf_localization_node/ekf_3d.yaml"/>
+    <!-- <remap from="/odometry/filtered" to="/odom" /> -->
+  </node>
+
+  <!-- <node name="ekf_localization_node_map"
+        pkg="robot_localization"
+        type="ekf_localization_node"
+        clear_params="true">
+    <rosparam unless="$(arg three_d)"
+              command="load"
+              file="$(find leo_navigation)/config/ekf_localization_node/ekf_2d_map.yaml"/>
+    <rosparam if="$(arg three_d)"
+              command="load"
+              file="$(find leo_navigation)/config/ekf_localization_node/ekf_3d_map.yaml"/>
+
+    <remap from="/odom/filtered" to="/rtabmap/odom/filtered" />
+  </node> -->
+
+</launch>
